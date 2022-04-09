@@ -1,0 +1,16 @@
+prototype(CodeQ.Taggr:Component.Notice) < prototype(Neos.Neos:ContentComponent) {
+    id = false
+    title = false
+    content = false
+    type = 'todo'
+
+    renderer = afx`
+        <div id={props.id} class={'notice type-' + props.type} @if.isFrontendNotice={props.type != 'backend' || node.context.inBackend}>
+            <h4 @if.has={props.title || node.context.inBackend} class="header">
+                <span @if.backend={props.type == 'backend'}>Backend only: </span>
+                {props.title}
+            </h4>
+            <div class="styled-content">{props.content}</div>
+        </div>
+    `
+}

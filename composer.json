@@ -1,0 +1,18 @@
+{
+    "description": "A Neos.io package to tag nodes for internal management",
+    "type": "neos-package",
+    "name": "codeq/taggr",
+    "require": {
+        "neos/neos": "^7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "CodeQ\\Taggr\\": "Classes/"
+        }
+    },
+    "extra": {
+        "neos": {
+            "package-key": "CodeQ.Taggr"
+        }
+    }
+}

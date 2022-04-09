@@ -1,0 +1,13 @@
+'CodeQ.Taggr:Document.Tags':
+  superTypes:
+    'Neos.Neos:Document': true
+    'CodeQ.Taggr:Constraint.Document.BackendOnly': true
+  ui:
+    label: Tags
+    icon: icon-tags
+    position: 900
+  constraints:
+    nodeTypes:
+      'Neos.Neos:Document': false
+      'CodeQ.Taggr:Document.Tag': true
+      'CodeQ.Taggr:Document.Tags': true

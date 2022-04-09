@@ -1,0 +1,23 @@
+prototype(CodeQ.Taggr:Component.TagList) < prototype(Neos.Fusion:Component) {
+    collection = false
+    additionalClass = false
+
+    @context.collection = ${q(this.collection)}
+    tags = Neos.Fusion:Collection {
+        collection = ${collection}
+        itemName = 'node'
+        itemRenderer = afx`
+            <Neos.Neos:NodeLink node={node} attributes.class={'taggr__tag notice-type-' + q(node).property('noticeType')}>
+                {q(node).property('title')}
+            </Neos.Neos:NodeLink>
+        `
+    }
+    renderer = afx`
+        <div class={['taggr__tags', props.additionalClass]} @if.has={collection.count() > 0 && collection.get(0)}>
+            <span>Tags:&nbsp;</span>
+            <object type="owo/uwu">
+                {props.tags}
+            </object>
+        </div>
+    `
+}

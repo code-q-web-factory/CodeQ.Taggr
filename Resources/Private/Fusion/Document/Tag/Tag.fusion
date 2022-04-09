@@ -1,0 +1,43 @@
+prototype(CodeQ.Taggr:Document.Tag) >
+prototype(CodeQ.Taggr:Document.Tag) < prototype(Neos.Fusion:Case) {
+    inBackend {
+        condition = ${node.context.inBackend}
+        renderer = Neos.Neos:Page {
+            body = Neos.Neos:ContentComponent {
+                taggedNodes = ${Array.filter(q(site).find('[instanceof CodeQ.Taggr:Mixin.Taggable]').add(site).get(), currentNode => Type.isArray(q(currentNode).property('tags')) && Array.indexOf(q(currentNode).property('tags'), documentNode) >= 0)}
+                notice = CodeQ.Taggr:Component.Notice {
+                    type = ${q(node).property('noticeType')}
+                    title = Neos.Neos:Editable {
+                        property = 'noticeTitle'
+                    }
+                    content = Neos.Neos:Editable {
+                        property = 'noticeText'
+                    }
+                }
+
+                renderer = afx`
+                    <h1>{q(documentNode).property('title')}</h1>
+                    <h2>You can define a notice content below. This notice will be displayed on all tagged pages.</h2>
+                    {props.notice}
+
+                    <Neos.Fusion:Fragment @if={props.taggedNodes}>
+                        <h2>The following nodes were tagged with this tag:</h2>
+                        <ul>
+                            <Neos.Fusion:Loop items={props.taggedNodes} itemName="node">
+                                <CodeQ.Taggr:Component.NodeListEntry node={node} />
+                            </Neos.Fusion:Loop>
+                        </ul>
+                    </Neos.Fusion:Fragment>
+                `
+            }
+        }
+    }
+    default {
+        condition = ${true}
+        renderer = Neos.Fusion:Renderer {
+            renderPath = '/error'
+            @context.statusCode = 403
+            @context.statusMessage = 'This page is not accessible in frontend'
+        }
+    }
+}

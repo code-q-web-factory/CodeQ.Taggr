@@ -1,0 +1,6 @@
+prototype(Neos.Neos:Page).head.stylesheets.taggr = Neos.Fusion:Component {
+    @if.isInBackend = ${node.context.inBackend}
+    renderer = afx`
+        <link href={StaticResource.uri('CodeQ.Taggr', 'Public/Styles/index.css')} type="text/css" rel="stylesheet" />
+    `
+}

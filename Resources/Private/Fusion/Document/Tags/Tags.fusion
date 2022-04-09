@@ -1,0 +1,30 @@
+prototype(CodeQ.Taggr:Document.Tags) >
+prototype(CodeQ.Taggr:Document.Tags) < prototype(Neos.Fusion:Case) {
+    inBackend {
+        condition = ${node.context.inBackend}
+        renderer = Neos.Neos:Page {
+            body = Neos.Fusion:Component {
+                renderer = afx`
+                    <div class="section">
+                        <div class="container">
+                            <div class="row" style="margin-bottom: 0;">
+                                <div>
+                                    <br /><br />
+                                    <h3 class="header">You can add additional tags here.</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `
+            }
+        }
+    }
+    default {
+        condition = ${true}
+        renderer = Neos.Fusion:Renderer {
+            renderPath = '/error'
+            @context.statusCode = 403
+            @context.statusMessage = 'This page is not accessible in frontend'
+        }
+    }
+}

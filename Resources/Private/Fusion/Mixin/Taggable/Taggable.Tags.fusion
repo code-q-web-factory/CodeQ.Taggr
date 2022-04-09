@@ -1,0 +1,10 @@
+prototype(CodeQ.Taggr:Mixin.Taggable.Tags) < prototype(Neos.Fusion:Component) {
+    node = ${node}
+
+    @if.isInBackend = ${this.node.context.inBackend}
+    tags = ${q(this.node).property('tags')}
+
+    renderer = CodeQ.Taggr:Component.TagList {
+        collection = ${props.tags}
+    }
+}

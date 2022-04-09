@@ -1,0 +1,19 @@
+'CodeQ.Taggr:Mixin.Taggable':
+  abstract: true
+  ui:
+    inspector:
+      groups:
+        taggr:
+          label: 'Tags'
+          icon: 'tags'
+  properties:
+    tags:
+      type: references
+      defaultValue: []
+      ui:
+        label: 'Tags'
+        reloadIfChanged: true
+        inspector:
+          group: 'taggr'
+          editorOptions:
+            nodeTypes: ['CodeQ.Taggr:Document.Tag']
