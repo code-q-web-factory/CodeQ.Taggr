@@ -6,7 +6,6 @@ prototype(CodeQ.Taggr:Component.NodeListEntry) < prototype(Neos.Fusion:Component
 
     renderer = afx`
         <li>
-            <Neos.Fusion:Debug.Console value={props.linkNode} />
             <Neos.Neos:NodeLink node={props.linkNode}>
                 {props.label}
             </Neos.Neos:NodeLink>

@@ -5,6 +5,8 @@ prototype(CodeQ.Taggr:Document.Tag) < prototype(Neos.Fusion:Case) {
         renderer = Neos.Neos:Page {
             body = Neos.Neos:ContentComponent {
                 taggedNodes = ${Array.filter(q(site).find('[instanceof CodeQ.Taggr:Mixin.Taggable]').add(site).get(), currentNode => Type.isArray(q(currentNode).property('tags')) && Array.indexOf(q(currentNode).property('tags'), documentNode) >= 0)}
+
+                isNoticeEnabled = ${Configuration.setting('CodeQ.Taggr.notice.enable')}
                 notice = CodeQ.Taggr:Component.Notice {
                     type = ${q(node).property('noticeType')}
                     title = Neos.Neos:Editable {
@@ -17,8 +19,11 @@ prototype(CodeQ.Taggr:Document.Tag) < prototype(Neos.Fusion:Case) {
 
                 renderer = afx`
                     <h1>{q(documentNode).property('title')}</h1>
-                    <h2>You can define a notice content below. This notice will be displayed on all tagged pages.</h2>
-                    {props.notice}
+
+                    <Neos.Fusion:Fragment @if={props.isNoticeEnabled}>
+                        <h2>You can define a notice content below. This notice will be displayed on all tagged pages.</h2>
+                        {props.notice}
+                    </Neos.Fusion:Fragment>
 
                     <Neos.Fusion:Fragment @if={props.taggedNodes}>
                         <h2>The following nodes were tagged with this tag:</h2>
