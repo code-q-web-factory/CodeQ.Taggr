@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file original="" product-name="CodeQ.Taggr" source-language="en" datatype="plaintext">
+		<body>
+			<trans-unit id="taggedNodes.listTitle" xml:space="preserve">
+				<source>The following nodes were tagged with this tag:</source>
+			</trans-unit>
+            <trans-unit id="notice.editTitle" xml:space="preserve">
+				<source>You can define a notice content below. This notice will be displayed on all tagged pages.</source>
+			</trans-unit>
+            <trans-unit id="addAdditionalTagsHere" xml:space="preserve">
+				<source>You can add additional tags as sub-documents here.</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

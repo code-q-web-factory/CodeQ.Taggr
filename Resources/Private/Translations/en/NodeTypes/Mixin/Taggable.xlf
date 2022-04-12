@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file original="" product-name="CodeQ.Taggr" source-language="en" datatype="plaintext">
+		<body>
+            <trans-unit id="groups.taggr" xml:space="preserve">
+				<source>Internal Tags</source>
+			</trans-unit>
+            <trans-unit id="properties.tags" xml:space="preserve">
+				<source>Internal Tags</source>
+			</trans-unit>
+            <trans-unit id="properties.tags.ui.help.message" xml:space="preserve">
+				<source>These internal tags are only visible to your co-editors in backend and not visible in frontend!</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

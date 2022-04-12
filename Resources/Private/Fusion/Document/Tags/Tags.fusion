@@ -3,18 +3,12 @@ prototype(CodeQ.Taggr:Document.Tags) < prototype(Neos.Fusion:Case) {
     inBackend {
         condition = ${node.context.inBackend}
         renderer = Neos.Neos:Page {
-            body = Neos.Fusion:Component {
+            body = Neos.Neos:ContentComponent {
                 renderer = afx`
-                    <div class="section">
-                        <div class="container">
-                            <div class="row" style="margin-bottom: 0;">
-                                <div>
-                                    <br /><br />
-                                    <h3 class="header">You can add additional tags here.</h3>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <h1>{q(documentNode).property('title')}</h1>
+
+                    <br /><br />
+                    <p>{Translation.translate('addAdditionalTagsHere', null, [], null, 'CodeQ.Taggr')}</p>
                 `
             }
         }

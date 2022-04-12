@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file original="" source-language="en" target-language="de" datatype="plaintext">
+		<body>
+            <trans-unit id="groups.taggr" xml:space="preserve">
+				<source>Internal Tags</source>
+                <target>Interne Tags</target>
+			</trans-unit>
+            <trans-unit id="properties.tags" xml:space="preserve">
+				<source>Internal Tags</source>
+                <target>Interne Tags</target>
+			</trans-unit>
+            <trans-unit id="properties.tags.ui.help.message" xml:space="preserve">
+				<source>These internal tags are only visible to your co-editors in backend and not visible in frontend!</source>
+                <target>Diese internen Tags sind nur für deine Co-Editoren im Administrationsbereich sichtbar, nicht jedoch für Seitenbesucher!</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

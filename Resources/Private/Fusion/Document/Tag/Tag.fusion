@@ -21,12 +21,12 @@ prototype(CodeQ.Taggr:Document.Tag) < prototype(Neos.Fusion:Case) {
                     <h1>{q(documentNode).property('title')}</h1>
 
                     <Neos.Fusion:Fragment @if={props.isNoticeEnabled}>
-                        <h2>You can define a notice content below. This notice will be displayed on all tagged pages.</h2>
+                        <h2>{Translation.translate('notice.editTitle', null, [], null, 'CodeQ.Taggr')}</h2>
                         {props.notice}
                     </Neos.Fusion:Fragment>
 
                     <Neos.Fusion:Fragment @if={props.taggedNodes}>
-                        <h2>The following nodes were tagged with this tag:</h2>
+                        <h2>{Translation.translate('taggedNodes.listTitle', null, [], null, 'CodeQ.Taggr')}</h2>
                         <ul>
                             <Neos.Fusion:Loop items={props.taggedNodes} itemName="node">
                                 <CodeQ.Taggr:Component.NodeListEntry node={node} />

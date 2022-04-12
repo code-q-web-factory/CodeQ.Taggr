@@ -3,7 +3,10 @@ Neos:
     fusion:
       autoInclude:
         CodeQ.Taggr: true
-
+    userInterface:
+      translation:
+        autoInclude:
+          'CodeQ.Taggr': ['NodeTypes/*']
 CodeQ:
   Taggr:
     notice:

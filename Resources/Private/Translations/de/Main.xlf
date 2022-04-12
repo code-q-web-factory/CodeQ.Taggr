@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file original="" source-language="en" target-language="de" datatype="plaintext">
+		<body>
+            <trans-unit id="taggedNodes.listTitle" xml:space="preserve">
+				<source>The following nodes were tagged with this tag:</source>
+                <target>Die folgenden Nodes wurden mit diesem Tag versehen:</target>
+			</trans-unit>
+            <trans-unit id="notice.editTitle" xml:space="preserve">
+				<source>You can define a notice content below. This notice will be displayed on all tagged pages.</source>
+                <target>Du kannst hier einen Inhalt für den Notiz-Block definieren. Dieser Notiz-Block wird auf allen Seiten mit diesem Tag angezeigt.</target>
+			</trans-unit>
+            <trans-unit id="addAdditionalTagsHere" xml:space="preserve">
+				<source>You can add additional tags as sub-documents here.</source>
+                <target>Du kannst hier weitere Tags als Sub-Dokumente anlegen.</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

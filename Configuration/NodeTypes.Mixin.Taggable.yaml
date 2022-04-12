@@ -4,15 +4,16 @@
     inspector:
       groups:
         taggr:
-          label: 'Tags'
+          label: i18n
           icon: 'tags'
   properties:
     tags:
       type: references
-      defaultValue: []
       ui:
-        label: 'Tags'
+        label: i18n
         reloadIfChanged: true
+        help:
+          message: i18n
         inspector:
           group: 'taggr'
           editorOptions:
