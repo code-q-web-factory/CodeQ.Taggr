@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file original="" product-name="CodeQ.Taggr" source-language="en" datatype="plaintext">
+		<body>
+            <trans-unit id="groups.notice" xml:space="preserve">
+				<source>Notice</source>
+			</trans-unit>
+            <trans-unit id="properties.noticeType" xml:space="preserve">
+				<source>Notice Type</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

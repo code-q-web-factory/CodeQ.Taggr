@@ -1,4 +1,3 @@
-prototype(CodeQ.Taggr:Document.Tags) >
 prototype(CodeQ.Taggr:Document.Tags) < prototype(Neos.Fusion:Case) {
     inBackend {
         condition = ${node.context.inBackend}
@@ -19,6 +18,15 @@ prototype(CodeQ.Taggr:Document.Tags) < prototype(Neos.Fusion:Case) {
             renderPath = '/error'
             @context.statusCode = 403
             @context.statusMessage = 'This page is not accessible in frontend'
+        }
+    }
+
+    @cache {
+        mode = 'uncached'
+        context {
+            1 = 'site'
+            2 = 'documentNode'
+            3 = 'node'
         }
     }
 }

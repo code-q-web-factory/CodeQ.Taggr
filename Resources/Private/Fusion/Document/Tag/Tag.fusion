@@ -1,4 +1,3 @@
-prototype(CodeQ.Taggr:Document.Tag) >
 prototype(CodeQ.Taggr:Document.Tag) < prototype(Neos.Fusion:Case) {
     inBackend {
         condition = ${node.context.inBackend}
@@ -6,7 +5,7 @@ prototype(CodeQ.Taggr:Document.Tag) < prototype(Neos.Fusion:Case) {
             body = Neos.Neos:ContentComponent {
                 taggedNodes = ${Array.filter(q(site).find('[instanceof CodeQ.Taggr:Mixin.Taggable]').add(site).get(), currentNode => Type.isArray(q(currentNode).property('tags')) && Array.indexOf(q(currentNode).property('tags'), documentNode) >= 0)}
 
-                isNoticeEnabled = ${Configuration.setting('CodeQ.Taggr.notice.enable')}
+                isNoticeEnabled = false
                 notice = CodeQ.Taggr:Component.Notice {
                     type = ${q(node).property('noticeType')}
                     title = Neos.Neos:Editable {
@@ -43,6 +42,15 @@ prototype(CodeQ.Taggr:Document.Tag) < prototype(Neos.Fusion:Case) {
             renderPath = '/error'
             @context.statusCode = 403
             @context.statusMessage = 'This page is not accessible in frontend'
+        }
+    }
+
+    @cache {
+        mode = 'uncached'
+        context {
+            1 = 'site'
+            2 = 'documentNode'
+            3 = 'node'
         }
     }
 }

@@ -1,4 +1,4 @@
 'Neos.Neos:Document':
   constraints:
     nodeTypes:
-      'CodeQ.Taggr:Document.Tag': false
+      CodeQ.Taggr:Document.Tag: false

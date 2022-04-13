@@ -1,0 +1,3 @@
+prototype(CodeQ.Taggr:Document.Tag.WithNotice) < prototype(CodeQ.Taggr:Document.Tag) {
+    inBackend.renderer.body.isNoticeEnabled = true
+}

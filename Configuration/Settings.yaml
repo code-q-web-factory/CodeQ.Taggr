@@ -7,7 +7,3 @@ Neos:
       translation:
         autoInclude:
           'CodeQ.Taggr': ['NodeTypes/*']
-CodeQ:
-  Taggr:
-    notice:
-      enable: true

@@ -1,70 +1,11 @@
 'CodeQ.Taggr:Document.Tag':
   superTypes:
-    'Neos.Neos:Document': true
-    'CodeQ.Taggr:Constraint.Document.BackendOnly': true
+    Neos.Neos:Document: true
+    CodeQ.Taggr:Constraint.Document.BackendOnly: true
   ui:
     label: Tag
     icon: icon-tag
     position: 900
-    inspector:
-      groups:
-        notice:
-          label: 'Notice'
   constraints:
     nodeTypes:
       '*': false
-  properties:
-    noticeTitle:
-      type: string
-      defaultValue: ''
-      ui:
-        inlineEditable: true
-        inline:
-          editorOptions:
-            placeholder: 'Enter title here...'
-            autoparagraph: false
-    noticeText:
-      type: string
-      defaultValue: ''
-      ui:
-        inlineEditable: true
-        inline:
-          editorOptions:
-            placeholder: '<p>Enter content here...</p>'
-            autoparagraph: true
-            formatting:
-              strong: true
-              sub: true
-              sup: true
-              em: true
-              p: true
-    noticeType:
-      type: string
-      defaultValue: 'info'
-      ui:
-        label: 'Type'
-        reloadIfChanged: true
-        inspector:
-          group: 'notice'
-          editor: 'Neos.Neos/Inspector/Editors/SelectBoxEditor'
-          editorOptions:
-            allowEmpty: false
-            values:
-              'info':
-                label: 'Info'
-                icon: icon-info-circle
-              'warning':
-                label: 'Warning'
-                icon: icon-exclamation-triangle
-              'danger':
-                label: 'Danger'
-                icon: icon-times-circle
-              'todo':
-                label: 'TODO'
-                icon: icon-code
-              'tip':
-                label: 'Tip'
-                icon: icon-lightbulb
-              'backend':
-                label: 'Backend-only'
-                icon: icon-edit
