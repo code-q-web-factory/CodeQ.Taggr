@@ -6,6 +6,7 @@
     label: Tag
     icon: icon-tag
     position: 900
+    inlineEditable: true
   constraints:
     nodeTypes:
       '*': false

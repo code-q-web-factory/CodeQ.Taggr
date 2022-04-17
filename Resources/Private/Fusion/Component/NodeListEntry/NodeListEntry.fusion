@@ -2,7 +2,7 @@ prototype(CodeQ.Taggr:Component.NodeListEntry) < prototype(Neos.Fusion:Component
     node = ${node}
 
     label = ${Array.join(Array.map(q(Array.reverse(q(this.node).parents())).add(this.node), currentNode => Neos.Node.labelForNode(currentNode).properties('title', 'text')), ' / ')}
-    linkNode = ${q(this.node).closest('[instanceof Neos.Neos:Page]')}
+    linkNode = ${q(this.node).closest('[instanceof Neos.Neos:Document]').get(0)}
 
     renderer = afx`
         <li>
