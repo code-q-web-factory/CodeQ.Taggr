@@ -1,0 +1,24 @@
+prototype(CodeQ.Taggr:Document.AbstractDocument) < prototype(Carbon.BackendDocument:Document) {
+    namespace = 'neos neos-module carbon-backend'
+    headTags = Neos.Fusion:Join {
+        neosLiteStylesheet = Neos.Fusion:Tag {
+            tagName = 'link'
+            attributes {
+                rel = 'stylesheet'
+                href = ${StaticResource.uri('Neos.Neos', 'Public/Styles/Lite.css')}
+                type = 'text/css'
+            }
+        }
+        taggrStylesheet = Neos.Fusion:Tag {
+            tagName = 'link'
+            attributes {
+                rel = 'stylesheet'
+                href = ${StaticResource.uri('CodeQ.Taggr', 'Public/Styles/index.css')}
+                type = 'text/css'
+            }
+        }
+    }
+    documentStyle {
+        background = null
+    }
+}

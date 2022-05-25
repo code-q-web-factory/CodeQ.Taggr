@@ -10,3 +10,9 @@
   constraints:
     nodeTypes:
       '*': false
+  properties:
+    title:
+      ui:
+        label: Name des Tags
+    titleOverride:
+      ui: ~

@@ -1,15 +1,10 @@
 prototype(CodeQ.Taggr:Document.Tags) < prototype(Neos.Fusion:Case) {
     inBackend {
         condition = ${node.context.inBackend}
-        renderer = Neos.Neos:Page {
-            body = Neos.Neos:ContentComponent {
-                renderer = afx`
-                    <h1>{q(documentNode).property('title')}</h1>
-
-                    <br /><br />
-                    <p>{Translation.translate('addAdditionalTagsHere', null, [], null, 'CodeQ.Taggr')}</p>
-                `
-            }
+        renderer = Carbon.BackendDocument:Document {
+            content = afx`
+                <p>{Translation.translate('addAdditionalTagsHere', null, [], null, 'CodeQ.Taggr')}</p>
+            `
         }
 
         @cache {

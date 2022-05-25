@@ -25,22 +25,27 @@
 
 .notice.type-info {
     background: #ffd54f;
+    color: #333333;
 }
 
 .notice.type-warning, .notice.type-backend {
     background: #ff6f00;
+    color: #333333;
 }
 
 .notice.type-danger {
     background: #FF0000;
+    color: #FFFFFF;
 }
 
 .notice.type-todo {
-    background: gray;
+    background: #909090;
+    color: #FFFFFF;
 }
 
 .notice.type-tip {
     background: green;
+    color: #FFFFFF;
 }
 
 .notice .header {

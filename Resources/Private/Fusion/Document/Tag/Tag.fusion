@@ -1,8 +1,9 @@
 prototype(CodeQ.Taggr:Document.Tag) < prototype(Neos.Fusion:Case) {
     inBackend {
         condition = ${node.context.inBackend}
-        renderer = Neos.Neos:Page {
-            body = Neos.Neos:ContentComponent {
+        renderer = CodeQ.Taggr:Document.AbstractDocument {
+            singleline = false
+            content = Neos.Neos:ContentComponent {
                 taggedNodes = ${Array.filter(q(site).find('[instanceof CodeQ.Taggr:Mixin.Taggable]').add(site).get(), currentNode => Type.isArray(q(currentNode).property('tags')) && Array.indexOf(q(currentNode).property('tags'), documentNode) >= 0)}
 
                 isNoticeEnabled = false
@@ -17,20 +18,30 @@ prototype(CodeQ.Taggr:Document.Tag) < prototype(Neos.Fusion:Case) {
                 }
 
                 renderer = afx`
-                    <h1>{q(documentNode).property('title')}</h1>
+                    <legend>{q(node).property('title')}</legend>
+                    <br />
 
                     <Neos.Fusion:Fragment @if={props.isNoticeEnabled}>
                         <h2>{Translation.translate('notice.editTitle', null, [], null, 'CodeQ.Taggr')}</h2>
+                        <br />
                         {props.notice}
                     </Neos.Fusion:Fragment>
 
                     <Neos.Fusion:Fragment @if={props.taggedNodes}>
                         <h2>{Translation.translate('taggedNodes.listTitle', null, [], null, 'CodeQ.Taggr')}</h2>
-                        <ul>
-                            <Neos.Fusion:Loop items={props.taggedNodes} itemName="node">
-                                <CodeQ.Taggr:Component.NodeListEntry node={node} />
-                            </Neos.Fusion:Loop>
-                        </ul>
+                        <br />
+                        <table class="neos-table">
+                            <thead>
+                                <tr>
+                                    <th>Pfad</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <Neos.Fusion:Loop items={props.taggedNodes} itemName="node">
+                                    <CodeQ.Taggr:Component.NodeListEntry node={node} />
+                                </Neos.Fusion:Loop>
+                            </tbody>
+                        </table>
                     </Neos.Fusion:Fragment>
                 `
             }

@@ -10,6 +10,7 @@ prototype(CodeQ.Taggr:Component.Notice) < prototype(Neos.Neos:ContentComponent) 
                 <span @if.backend={props.type == 'backend'}>Backend only: </span>
                 {props.title}
             </h4>
+            <br />
             <div class="styled-content">{props.content}</div>
         </div>
     `

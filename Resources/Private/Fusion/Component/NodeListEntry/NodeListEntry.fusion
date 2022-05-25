@@ -5,10 +5,19 @@ prototype(CodeQ.Taggr:Component.NodeListEntry) < prototype(Neos.Fusion:Component
     linkNode = ${q(this.node).closest('[instanceof Neos.Neos:Document]').get(0)}
 
     renderer = afx`
-        <li>
-            <Neos.Neos:NodeLink node={props.linkNode}>
+        <tr>
+            <td>
                 {props.label}
-            </Neos.Neos:NodeLink>
-        </li>
+            </td>
+            <td class="neos-action">
+                <div class="neos-pull-right">
+                    <Neos.Neos:NodeLink
+                        node={props.linkNode}
+                        attributes.class="neos-button neos-button-primary">
+                        <i class="fas fa-eye icon-white"></i>
+                    </Neos.Neos:NodeLink>
+                </div>
+            </td>
+        </tr>
     `
 }
