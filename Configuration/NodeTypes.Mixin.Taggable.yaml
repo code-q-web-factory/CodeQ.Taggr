@@ -6,6 +6,7 @@
         taggr:
           label: i18n
           icon: 'tags'
+          position: 900
   properties:
     tags:
       type: references
