@@ -3,13 +3,8 @@
     "type": "neos-package",
     "name": "codeq/taggr",
     "require": {
-        "neos/neos": "^7.0",
+        "neos/neos": "^7.0 || ^8.0",
         "carbon/backenddocument": "^5.6"
-    },
-    "autoload": {
-        "psr-4": {
-            "CodeQ\\Taggr\\": "Classes/"
-        }
     },
     "extra": {
         "neos": {
